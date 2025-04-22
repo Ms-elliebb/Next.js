@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-border-container {
+  /* Kenarlık kalınlığını belirleyin (ihtiyaca göre ayarlayın) */
+  border: 5px solid transparent;
+
+  /* Gradient'in tamamını kenarlık olarak kullanın */
+  border-image-slice: 1;
+
+  /* İçerik ve kenarlık arasındaki boşluğu korumak için */
+  background-clip: padding-box; /* Bu önemli */
+}
+
+.main-background {
+  background: linear-gradient(180.57deg, rgba(0, 0, 0, 0) 0.49%, #000000 99.51%), linear-gradient(90deg, #21042C 4.08%, #1E082F 29.2%, #190E35 54.31%, #15133A 79.43%, #121840 104.54%);
+}
+
+.complex-gradient-background {
+  background: linear-gradient(270.25deg, rgba(0, 0, 0, 0) -14.36%, #4A28F9 98.39%), linear-gradient(90.18deg, #21042C 0.92%, #1E082F 25.66%, #190E35 50.39%, #15133A 75.12%, #121840 99.85%);
+}
+
+.thin-white-glow {
+  /* İnce Beyaz Neon Efekti */
+  /* Gölge: 0 offset, 8px bulanıklık, 1px yayılma, beyaz renk %80 opaklıkta */
+  box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.8);
+}
